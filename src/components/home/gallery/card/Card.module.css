@@ -1,0 +1,14 @@
+.card{
+  width: calc(7 * var(--unit));
+  height: calc(8 * var(--unit));
+  margin: 0;
+}
+
+.graphics{
+  width: 100%;
+  height: calc(7 * var(--unit));
+}
+
+.tags{
+  display: flex;
+}

@@ -1,0 +1,10 @@
+.item{
+  width: var(--unit);
+  height: var(--unit);
+  margin: 0;
+  padding: 0;
+}
+
+.item:hover{
+  cursor: pointer;
+}
