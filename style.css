@@ -1,0 +1,30 @@
+body{
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
+
+
+.navbar{
+    height: 235px;
+    box-sizing: border-box;
+    padding: 50px 64px 70px 68px;
+}
+
+.navbar-brand img{
+    width: 200px;
+}
+
+button {
+    border: 0 !important;
+    border-color: white !important;
+    outline: none;
+    color: white !important
+}
+
+button:active {
+    border: 0 !important;
+}
