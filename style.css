@@ -1,9 +1,46 @@
 body{
-    font-family: "Open Sans", serif;
+    font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
   
+img{
+    max-width: 100%;
+}
+
+a:hover{
+    cursor: url("/cursor.png"), pointer;
+}
+
+p a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+p a:hover {
+    color: #000;
+}
+  
+p a:hover::before {
+    transform: scaleX(1);
+}
+
+/* Animate the line from the left */
+p a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
 
 
 .navbar{
@@ -49,6 +86,35 @@ button:active {
     padding-bottom: 80px;
 }
 
+
+.content .heading{
+    height: 250px;
+}
+
+.content h1{
+    font-weight: bold;
+    font-size: max(min(64px, 5vw), 32px);
+    letter-spacing: -2%;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.content p.subtitle{
+    color: #828282;
+    font-weight: normal;
+    font-size: max(min(24px, 1.85vw), 18px);
+    margin:0
+}
+
+.content p.body{
+    max-width: 842px;
+    margin: auto;
+    font-size: max(min(20px, 1.7vw), 16px);
+    padding: 80px;
+    box-sizing: content-box;
+}
+
+
 footer::before{
     content: "";
     position: absolute;
@@ -66,4 +132,111 @@ footer{
     padding-bottom: 160px;
     color: #828282;
     font-size: 10pt;
+}
+
+
+
+/* Fluid gallery */
+
+
+.tz-gallery{
+    margin-top: 30px;
+}
+
+.tz-gallery .row{
+    justify-content: center;
+}
+
+.tz-gallery .row > div {
+    padding: 2px;
+    position: relative;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.tz-gallery-bckp .lightbox:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    color: #fff;
+    font-size: 26px;
+    font-family: "Open Sans", sans-serif;
+    content: '\e003';
+    pointer-events: none;
+    z-index: 9000;
+    transition: 0.4s;
+}
+
+
+.tz-gallery .lightbox:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: white;
+    content: '';
+    transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+    opacity: 0.5;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+#next-button svg{
+    display: none;
+}
+
+#previous-button svg{
+    display: none;
+}
+
+#close-button svg{
+    display: none;
+}
+
+#next-button::before{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 60px;
+    font-family: "Open Sans", sans-serif;
+    content: '\21DD';
+}
+
+#previous-button::before{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 60px;
+    font-family: "Open Sans", sans-serif;
+    content: '\21DC';
+}
+
+#close-button::before{
+    position: absolute;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    color: #fff;
+    font-size: 60px;
+    font-family: "Open Sans", sans-serif;
+    content: '\10102';
 }
